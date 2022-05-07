@@ -1,0 +1,87 @@
+<div class="main-content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-6" *ngFor="let session of sessions">
+                <div class="card card-chart">
+                    <div class="card-header card-header-Brown">
+                        <div class="ct-chart" id="approvalsChart"></div>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row ">
+                            <h4 class="col-md-5 card-title">Presenter Name</h4>
+                            <h4 class="col-md-7 card-title"><b>{{session.presenterName}}</b></h4>
+                        </div>
+
+                        <div class="row ">
+                            <h4 class="col-md-5 card-title">Session Name</h4>
+                            <h4 class="col-md-7 card-title"><b>{{session.sessionName}}</b></h4>
+                        </div>
+                        <!-- <div class="row ">
+                            <h4 class="col-md-5 card-title">Session Video</h4>
+                            <a target="_blank" rel="noopener noreferrer" [href]="session.sessionVideo | safeUrl"><b>Session Vedio</b></a>
+                        </div> -->
+                        <form [formGroup]="RateForm">
+                            <div class="row">
+                                <div class="col-md-4" style="padding-top: 2%; padding-left: 6%;">
+                                    <h6>Rate The Presenter</h6>
+                                </div>
+                                <div class="col-md-4 rate">
+                                    <input type="radio" class="star" id="star5" name="PresenterRateDegree" value="5" formControlName="PresenterRateDegree" />
+                                    <label class="starLable" title="text">5 stars</label>
+                                    <input type="radio" class="star" id="star4" name="PresenterRateDegree" value="4" formControlName="PresenterRateDegree" />
+                                    <label class="starLable" title="text">4 stars</label>
+                                    <input type="radio" class="star" id="star3" name="PresenterRateDegree" value="3" formControlName="PresenterRateDegree" />
+                                    <label class="starLable" title="text">3 stars</label>
+                                    <input type="radio" class="star" id="star2" name="PresenterRateDegree" value="2" formControlName="PresenterRateDegree" />
+                                    <label class="starLable" title="text">2 stars</label>
+                                    <input type="radio" class="star" id="star1" name="PresenterRateDegree" value="1" formControlName="PresenterRateDegree" />
+                                    <label class="starLable" title="text">1 star</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4" style="padding-top: 2%; padding-left: 6%;">
+                                    <h6>Rate The Session</h6>
+                                </div>
+                                <div class="col-md-4 rateSesstion">
+                                    <input type="radio" class="star" id="star5"  name="SessionRateDegree" value="5" formControlName="SessionRateDegree" />
+                                    <label class="starLable" title="text">5 stars</label>
+                                    <input type="radio" class="star" id="star4"  name="SessionRateDegree" value="4" formControlName="SessionRateDegree" />
+                                    <label class="starLable" title="text">4 stars</label>
+                                    <input type="radio" class="star" id="star3"  name="SessionRateDegree" value="3" formControlName="SessionRateDegree" />
+                                    <label class="starLable" title="text">3 stars</label>
+                                    <input type="radio" class="star" id="star2"  name="SessionRateDegree" value="2" formControlName="SessionRateDegree" />
+                                    <label class="starLable" title="text">2 stars</label>
+                                    <input type="radio" class="star" id="star1"  name="SessionRateDegree" value="1" formControlName="SessionRateDegree" />
+                                    <label class="starLable" title="text">1 star</label>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-4" style="padding-top: 2%; padding-left: 6%;">
+                                    <h6>Your Comment</h6>
+                                </div>
+                                <div class="col-md-6">
+                                    <textarea style="width:100%;" name="Comment" formControlName="Comment"></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <button mat-raised-button class="btn btn-primary" type="submit" (click)="submitForm(session.id)">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">access_time</i> updated 1 minutes ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

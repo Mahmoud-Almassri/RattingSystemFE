@@ -1,0 +1,84 @@
+<div class="main-content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-6" *ngFor="let rate of userRates">
+                <div class="card card-chart">
+                    <div class="card-header card-header-Brown">
+                        <div class="ct-chart" id="approvalsChart"></div>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row ">
+                            <h4 class="col-md-5 card-title">Presenter Name</h4>
+                            <h4 class="col-md-7 card-title"><b>{{rate.rate_Session.presenterName}}</b></h4>
+                        </div>
+
+                        <div class="row ">
+                            <h4 class="col-md-5 card-title">Session Name</h4>
+                            <h4 class="col-md-7 card-title"><b>{{rate.rate_Session.sessionName}}</b></h4>
+                        </div>
+                        <div class="row ">
+                            <h4 class="col-md-5 card-title">Voter Name</h4>
+                            <h4 class="col-md-7 card-title"><b>{{rate.rate_User.userName}}</b></h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4" style="padding-top: 2%; padding-left: 6%;">
+                                <h6>Rate The Presenter</h6>
+                            </div>
+                            <div class="col-md-4 rate">
+                                <input type="radio" class="star" id="star5" [checked]="rate.presenteRaterDegree == 5"value="5"/>
+                                <label class="starLable" title="text">5 stars</label>
+                                <input type="radio" class="star" id="star4" [checked]="rate.presenteRaterDegree == 4" value="4" />
+                                <label class="starLable" title="text">4 stars</label>
+                                <input type="radio" class="star" id="star3" [checked]="rate.presenteRaterDegree == 3" value="3" />
+                                <label class="starLable" title="text">3 stars</label>
+                                <input type="radio" class="star" id="star2" [checked]="rate.presenteRaterDegree == 2" value="2" />
+                                <label class="starLable" title="text">2 stars</label>
+                                <input type="radio" class="star" id="star1" [checked]="rate.presenteRaterDegree == 1" value="1" />
+                                <label class="starLable" title="text">1 star</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4" style="padding-top: 2%; padding-left: 6%;">
+                                <h6>Rate The Session</h6>
+                            </div>
+                            <div class="col-md-4 rateSesstion">
+                                <input type="radio" class="star" id="star5" [checked]="rate.sessionRateDegree == 5" value="5" />
+                                <label class="starLable" title="text">5 stars</label>
+                                <input type="radio" class="star" id="star4" [checked]="rate.sessionRateDegree == 4" value="4"/>
+                                <label class="starLable" title="text">4 stars</label>
+                                <input type="radio" class="star" id="star3" [checked]="rate.sessionRateDegree == 3" value="3" />
+                                <label class="starLable" title="text">3 stars</label>
+                                <input type="radio" class="star" id="star2" [checked]="rate.sessionRateDegree == 2" value="2" />
+                                <label class="starLable" title="text">2 stars</label>
+                                <input type="radio" class="star" id="star1" [checked]="rate.sessionRateDegree == 1" value="1" />
+                                <label class="starLable" title="text">1 star</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4" style="padding-top: 2%; padding-left: 6%;">
+                                <h6>Your Comment</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <textarea readonly style="width:100%;" name="comment"
+                                    formControlName="comment"> {{rate.comment}} </textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">access_time</i> updated 1 minutes ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

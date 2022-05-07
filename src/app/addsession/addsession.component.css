@@ -1,0 +1,127 @@
+*{
+    transition: all 0.6s;
+}
+
+html {
+    height: 100%;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    color: #888;
+    margin: 0;
+}
+
+#main{
+    display: table;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+.fof{
+	  display: table-cell;
+	  vertical-align: middle;
+}
+
+.fof h1{
+	  font-size: 38px;
+	  display: inline-block;
+	  padding-right: 12px;
+	  animation: type .5s alternate infinite;
+}
+
+@keyframes type{
+	  from{box-shadow: inset -3px 0px 0px #888;}
+	  to{box-shadow: inset -3px 0px 0px transparent;}
+}
+.card-header-Brown{
+    background: #DEB887;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+
+    .rate:not(:checked) > input {
+        position: absolute;
+        top: -9999px;
+    }
+
+    .rate:not(:checked) > label {
+        float: right;
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 30px;
+        color: #ccc;
+    }
+
+        .rate:not(:checked) > label:before {
+            content: '★ ';
+        }
+
+    .rate > input:checked ~ label {
+        color: #ffc700;
+    }
+
+    .rate:not(:checked) > label:hover,
+    .rate:not(:checked) > label:hover ~ label {
+        color: #deb217;
+    }
+
+    .rate > input:checked + label:hover,
+    .rate > input:checked + label:hover ~ label,
+    .rate > input:checked ~ label:hover,
+    .rate > input:checked ~ label:hover ~ label,
+    .rate > label:hover ~ input:checked ~ label {
+        color: #c59b08;
+    }
+
+    .rateSesstion {
+        float: left;
+        height: 46px;
+        padding: 0 10px;
+    }
+    
+        .rateSesstion:not(:checked) > input {
+            position: absolute;
+            top: -9999px;
+        }
+    
+        .rateSesstion:not(:checked) > label {
+            float: right;
+            width: 1em;
+            overflow: hidden;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 30px;
+            color: #ccc;
+        }
+    
+            .rateSesstion:not(:checked) > label:before {
+                content: '★ ';
+            }
+    
+        .rateSesstion > input:checked ~ label {
+            color: #ffc700;
+        }
+    
+        .rateSesstion:not(:checked) > label:hover,
+        .rateSesstion:not(:checked) > label:hover ~ label {
+            color: #deb217;
+        }
+    
+        .rateSesstion > input:checked + label:hover,
+        .rateSesstion > input:checked + label:hover ~ label,
+        .rateSesstion > input:checked ~ label:hover,
+        .rateSesstion > input:checked ~ label:hover ~ label,
+        .rateSesstion > label:hover ~ input:checked ~ label {
+            color: #c59b08;
+        }
+
+    h4 {
+        display: inline;
+    }

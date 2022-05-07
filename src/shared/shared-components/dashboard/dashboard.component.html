@@ -1,0 +1,36 @@
+<div *ngIf="isAuthorizedToView" class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4" *ngFor="let dashboard of dashboardResponse?.dashboards">
+                <div class="card card-stats">
+                    <div class="card-header card-header-Brown card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">{{dashboard.icon}}</i>
+                        </div>
+                        <p class="card-category">{{dashboard.name}}</p>
+                        <h3 class="card-title">{{dashboard.value}}
+                        </h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons text-danger">launch</i>
+                            <a [routerLink]="dashboard.url">Go to details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+</div>
+<div *ngIf="!isAuthorizedToView" id="main">
+    <img src="../../../assets/img/403.png" style="position: absolute;
+    left: 30%;
+    top: 74px;" />
+    <div class="fof mt-5" style="padding-top: 361px;">
+        <h1>Sorry , you are not authorized </h1>
+        <br />
+        <h1> to access this page </h1>
+    </div>
+</div>
