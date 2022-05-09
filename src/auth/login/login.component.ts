@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
 
   submitForm(): void {
     if (this.loginForm.invalid){
-
+      this.notification.showNotification('Please fill all required fields', 'warning');
     }
     else {
       this.spinner.show();
@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
       }, error => {
         console.log(error);
         if(error.status === 400){
-          this.notification.showNotification('Username or password is wrong', 'danger');
+          this.notification.showNotification(error.error, 'warning');
         }
         else {
           this.notification.showNotification('Something went wrong please contact system admin', 'danger');

@@ -16,7 +16,7 @@ import { BaseService } from '../../shared/services/base.service';
 export class RateAverageComponent implements OnInit {
 
   RatesAverage: any[];
-  displayedColumns: string[] = ['SessionName', 'PresenterName', 'SessionRatesAverage', 'AveragePresenterRates'];
+  displayedColumns: string[] = ['PresenterName', 'SessionName', 'AveragePresenterRates', 'SessionRatesAverage'];
   constructor(
     private router: Router,
     private baseService: BaseService,
@@ -27,8 +27,8 @@ export class RateAverageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.baseService.GetItem(Controllers.Rate, Actions.ShowAllRates).subscribe(response => {
-      this.RatesAverage = response.sesstionList;
+    this.baseService.GetItem(Controllers.Rate, Actions.ShowAverageSessionRates).subscribe(response => {
+      this.RatesAverage = response;
       this.spinner.hide();
      }, error => {
        console.log(error);

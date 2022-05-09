@@ -42,7 +42,7 @@ export class RegistrationComponent implements OnInit {
 
   submitForm(): void {
     if (this.registrationForm.invalid){
-
+      this.notification.showNotification('Please fill all required fields', 'warning');
     }
     else {
       this.spinner.show();
@@ -50,10 +50,11 @@ export class RegistrationComponent implements OnInit {
       this.baseService.postItem(Controllers.Auth, Actions.Registration, loginForm).subscribe(response => {
         this.spinner.hide();
         this.router.navigate(['/auth/login']);
+        this.notification.showNotification('User added successfully', 'success');
       }, error => {
         console.log(error);
         if(error.status === 400){
-          this.notification.showNotification('Username or password is wrong', 'danger');
+          this.notification.showNotification(error.error, 'warning');
         }
         else {
           this.notification.showNotification('Something went wrong please contact system admin', 'danger');

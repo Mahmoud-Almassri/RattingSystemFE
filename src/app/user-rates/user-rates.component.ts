@@ -41,8 +41,8 @@ export class UserRatesComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    this.baseService.GetItem(Controllers.Rate, Actions.ShowAllRates).subscribe(response => {
-      this.userRates = response.rate;
+    this.baseService.GetItem(Controllers.Rate, Actions.ShowSessionsRates).subscribe(response => {
+      this.userRates = response;
       this.spinner.hide();
      }, error => {
        console.log(error);

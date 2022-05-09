@@ -9,34 +9,31 @@
                     </div>
                     <div class="card-body">
                         <table style="width: 100%;" mat-table [dataSource]="RatesAverage" class="mat-elevation-z8">
-
-                            <!--- Note that these columns can be defined in any order.
-                                  The actual rendered columns are set as a property on the row definition" -->
                           
-                            <!-- Position Column -->
-                            <ng-container matColumnDef="SessionName">
-                              <th mat-header-cell *matHeaderCellDef> Session Name </th>
-                              <td mat-cell *matCellDef="let element"> {{element.sessionName}} </td>
-                            </ng-container>
-                          
-                            <!-- Name Column -->
+                            <!-- PresenterName Column -->
                             <ng-container matColumnDef="PresenterName">
                               <th mat-header-cell *matHeaderCellDef> Presenter Name </th>
                               <td mat-cell *matCellDef="let element"> {{element.presenterName}} </td>
                             </ng-container>
+
+                            <!-- SessionName Column -->
+                            <ng-container matColumnDef="SessionName">
+                              <th mat-header-cell *matHeaderCellDef> Session Name </th>
+                              <td mat-cell *matCellDef="let element"> {{element.sessionName}} </td>
+                            </ng-container>
+
+                             <!-- AveragePresenterRates Column -->
+                             <ng-container matColumnDef="AveragePresenterRates">
+                              <th mat-header-cell *matHeaderCellDef> Presenter Rates Average </th>
+                              <td mat-cell *matCellDef="let element"> {{element.averagePresenterRates}} </td>
+                            </ng-container>
                           
-                            <!-- Weight Column -->
+                            <!-- SessionRatesAverage Column -->
                             <ng-container matColumnDef="SessionRatesAverage">
                               <th mat-header-cell *matHeaderCellDef> Session Rates Average </th>
                               <td mat-cell *matCellDef="let element"> {{element.averageSessionRates}} </td>
                             </ng-container>
 
-                            <!-- Weight Column -->
-                            <ng-container matColumnDef="AveragePresenterRates">
-                              <th mat-header-cell *matHeaderCellDef> Presenter Rates Average </th>
-                              <td mat-cell *matCellDef="let element"> {{element.averagePresenterRates}} </td>
-                            </ng-container>
-                          
                             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                           </table>

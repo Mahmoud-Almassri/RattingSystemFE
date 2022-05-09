@@ -27,5 +27,6 @@ export enum Actions {
   AddRate = 'AddRate',
   AddSession = 'AddSession',
   UploadSessionVideo = 'UploadSessionVideo',
-  ShowAllRates = 'ShowAllRates',
+  ShowSessionsRates = 'ShowSessionsRates',
+  ShowAverageSessionRates = 'ShowAverageSessionRates',
 }

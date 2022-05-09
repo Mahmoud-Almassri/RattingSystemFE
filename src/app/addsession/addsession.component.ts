@@ -19,8 +19,8 @@ export class AddsessionComponent implements OnInit {
   // sessionVideoPath: string;
 
   SessionForm = new FormGroup({
-    SessionName: new FormControl(''),
-    PresenterName: new FormControl(''),
+    SessionName: new FormControl('', Validators.required),
+    PresenterName: new FormControl('', Validators.required),
     // SessionVideoPath: new FormControl(''),
   });
   // SessionVideoForm = new FormGroup({
